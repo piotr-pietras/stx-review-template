@@ -5,12 +5,10 @@ import { v4 as uuidv4 } from "uuid";
 export const TodoAdd = () => {
   const [name, setName] = useState("");
   const [text, setText] = useState("");
-  const { mutate, isPending } = useAddTodo();
+  const { mutate, isPending, isSuccess } = useAddTodo();
   const onSubmit = () => {
     mutate({ id: uuidv4(), name: name, text, createdAt: Date.now() });
   };
-
-  const disabled = !text || !name;
 
   return (
     <div className="addContainer">
@@ -24,7 +22,10 @@ export const TodoAdd = () => {
         placeholder="text"
         onChange={(e) => setText(e.target.value)}
       />
-      <button disabled={disabled || isPending} onClick={onSubmit}>
+      <button
+        disabled={!text || !name || isPending || isSuccess}
+        onClick={onSubmit}
+      >
         {isPending ? "adding..." : "submit"}
       </button>
     </div>
