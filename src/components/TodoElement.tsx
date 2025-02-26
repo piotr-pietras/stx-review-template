@@ -1,9 +1,8 @@
 import { useRemoveTodo } from "../api/useRemoveTodo";
-import { Todo } from "../types/Todo";
 import closeIcon from "/src/assets/close-outline.svg";
 
 type Props = {
-  item: Todo;
+  item: { name: string; text: string; createdAt: number };
 };
 
 export const TodoElement = ({ item }: Props) => {
@@ -17,7 +16,6 @@ export const TodoElement = ({ item }: Props) => {
         src={closeIcon}
         alt="x"
         onClick={() => {
-          console.log("asd");
           mutate(item.id);
         }}
       />

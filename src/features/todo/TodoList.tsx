@@ -11,7 +11,7 @@ export const TodoList = () => {
   return (
     <>
       {data?.map((item) => (
-        <TodoElement key={item.id} item={item} />
+        <TodoElement item={item} />
       ))}
     </>
   );
