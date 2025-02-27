@@ -1,98 +1,21 @@
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateX(-50%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-}
-
-@keyframes skeleton-loading {
-  0% {
-    background-color: rgb(127, 123, 123);
-  }
-  100% {
-    background-color: rgb(75, 75, 75);
-  }
-}
+@import 'tailwindcss';
 
 :root {
   font-family: Inter;
   color-scheme: light dark;
-  background-color: #242424;
+}
+
+#root {
+  width: 100%;
+}
+
+html {
+  background-color: oklch(0.97 0 0);
 }
 
 body {
-  margin: 16px;
+  margin: 0 16px;
   display: flex;
   flex-direction: column;
   place-items: center;
-}
-
-.label {
-  color: rgb(213, 213, 213);
-}
-
-.todoContainer {
-  position: relative;
-  background-color: rgb(102, 100, 100);
-  max-width: 400px;
-  border-radius: 8px;
-  padding: 16px;
-  margin: 16px 0;
-  animation-name: appear;
-  animation-duration: 0.5s;
-}
-
-.addContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  animation-name: appear;
-  animation-duration: 0.5s;
-}
-
-.skeleton {
-  position: absolute;
-  border-radius: 8px;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  opacity: 0.75;
-  animation: skeleton-loading 1s linear infinite alternate;
-}
-
-textarea {
-  font-size: larger;
-  border-radius: 8px;
-  padding: 8px;
-  resize: vertical;
-}
-
-button {
-  font-size: larger;
-  border-radius: 8px;
-  padding: 8px;
-  background-color: rgba(0, 128, 0, 0.27);
-}
-
-button:hover {
-  cursor: pointer;
-  background-color: rgba(0, 128, 0, 0.6);
-}
-
-.icon {
-  width: 32px;
-  opacity: 0.5;
-  background-color: rgba(255, 0, 0, 0.324);
-  border-radius: 16px;
-}
-
-.icon:hover {
-  cursor: pointer;
-  opacity: 0.25;
 }
