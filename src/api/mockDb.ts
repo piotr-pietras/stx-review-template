@@ -1,23 +1,30 @@
-import { Todo } from "../types/Todo";
-import { v4 as uuidv4 } from "uuid";
+import { Todo } from '../types/Todo';
+import { v4 as uuid } from 'uuid';
 
 let mockDb: Todo[] = [
   {
-    id: uuidv4(),
-    name: "Testowy 1",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    id: uuid(),
+    name: 'Finish writing and reviewing the report by Tomorrow',
     createdAt: Date.now(),
   },
   {
-    id: uuidv4(),
-    name: "Testowy 2",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    id: uuid(),
+    name: 'Buy vegetables, fruits, milk, and other essentials',
     createdAt: Date.now(),
   },
   {
-    id: uuidv4(),
-    name: "Testowy 3",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    id: uuid(),
+    name: 'Go for a run or do a home workout',
+    createdAt: Date.now(),
+  },
+  {
+    id: uuid(),
+    name: 'Check in and catch up on the latest updates',
+    createdAt: Date.now(),
+  },
+  {
+    id: uuid(),
+    name: 'Declutter desk and file important documents',
     createdAt: Date.now(),
   },
 ];
