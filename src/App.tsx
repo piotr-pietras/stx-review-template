@@ -1,13 +1,7 @@
-import { TodoAdd } from "./features/todo/TodoAdd";
-import { TodoList } from "./features/todo/TodoList";
+import { TodoList } from './features/todo';
 
 function App() {
-  return (
-    <div>
-      <TodoList />
-      <TodoAdd />
-    </div>
-  );
+  return <TodoList />;
 }
 
 export default App;
