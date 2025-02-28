@@ -1,10 +1,9 @@
 import { EllipsisVerticalIcon } from '@heroicons/react/16/solid';
-import { Todo } from '../../types/Todo';
 import { Checkbox } from '../../components/Checkbox';
 import { DropdownMenu } from '../../components/DropdownMenu';
 
 type Props = {
-  item: Todo;
+  item: { name: string; createdAt: number };
   onDeleteButtonClick: () => void;
 };
 

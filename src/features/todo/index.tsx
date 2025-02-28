@@ -44,7 +44,6 @@ export const TodoList = () => {
         <div className="flex flex-col min-h-120 gap-y-2 py-6">
           {data?.map((item) => (
             <Element
-              key={item.id}
               item={item}
               onDeleteButtonClick={() => onDeleteButtonClick(item.id)}
             />
