@@ -63,7 +63,7 @@ export const TodoList = () => {
         >
           <Button
             onClick={onAddButtonClick}
-            className="bg-stone-900 h-15 rounded-full flex items-center justify-start px-6 w-full gap-x-2"
+            className="bg-stone-900 h-15 text-white rounded-full flex items-center justify-start px-6 w-full gap-x-2"
           >
             <PlusIcon className="size-5" />
             Create a new task

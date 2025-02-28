@@ -55,7 +55,7 @@ export const AddPopoverContent = ({
       />
       <Button
         className={cn(
-          'w-full h-14 rounded-full',
+          'w-full h-14 rounded-full text-white',
           isPending ? 'bg-gray-300' : 'bg-indigo-600'
         )}
         isDisabled={isPending}
