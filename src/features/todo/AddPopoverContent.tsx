@@ -5,7 +5,7 @@ import { Button } from '../../components/Button';
 import cn from 'clsx';
 
 type Props = {
-  onAddingSuccess: () => void;
+  onAddingSuccess?: () => void;
   value: string;
   onValueChange: (value: string) => void;
 };
@@ -32,7 +32,7 @@ export const AddPopoverContent = ({
       {
         onSuccess: () => {
           onValueChange('');
-          onAddingSuccess();
+          onAddingSuccess?.();
         },
       }
     );
