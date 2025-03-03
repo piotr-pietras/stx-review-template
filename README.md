@@ -10,7 +10,8 @@
 - Lack of keys for mapped components
 - Expected ID as a key
 
-## `TodoAdd.tsx:26` (needs to be changed)
+## `features/todo/index.tsx:54`
 
-- `isSuccess` is invalid and disallows to add more items
-- Expected to move the logic to the const
+- Modal does not close after successful submission
+- Missing `onAddingSuccess` callback
+- State `isPopoverOpen` line:17 should be set to false to close modal

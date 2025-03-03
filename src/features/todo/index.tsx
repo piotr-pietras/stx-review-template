@@ -22,8 +22,6 @@ export const TodoList = () => {
 
   const onAddButtonClick = () => setIsPopoverOpen(true);
 
-  const onAddingSuccess = () => setIsPopoverOpen(false);
-
   const onDeleteButtonClick = (id: string) => mutate(id);
 
   return (
@@ -54,7 +52,6 @@ export const TodoList = () => {
           setIsOpen={setIsPopoverOpen}
           content={
             <AddPopoverContent
-              onAddingSuccess={onAddingSuccess}
               value={inputValue}
               onValueChange={setInputValue}
             />
