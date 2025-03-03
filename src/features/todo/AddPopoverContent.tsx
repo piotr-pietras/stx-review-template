@@ -1,4 +1,4 @@
-import { ChangeEvent, SyntheticEvent, useRef } from 'react';
+import { SyntheticEvent } from 'react';
 import { useAddTodo } from '../../api/useAddTodo';
 import { v4 as uuid } from 'uuid';
 import { Button } from '../../components/Button';
@@ -16,7 +16,6 @@ export const AddPopoverContent = ({
   onValueChange,
 }: Props) => {
   const { mutate, isPending } = useAddTodo();
-  const inputRef = useRef<HTMLInputElement | null>(null);
 
   const text = isPending ? 'Adding...' : 'Save Changes';
 
@@ -38,9 +37,6 @@ export const AddPopoverContent = ({
     );
   };
 
-  const onChange = (e: ChangeEvent<HTMLInputElement>) =>
-    onValueChange(e.target.value);
-
   return (
     <form
       className="flex flex-col w-full p-4 gap-2 justify-between"
@@ -49,9 +45,6 @@ export const AddPopoverContent = ({
       <input
         className="w-full h-12 px-4 rounded-md border-1 border-gray-300 outline-none text-stone-700 font-medium"
         placeholder="Create new task"
-        ref={inputRef}
-        value={value}
-        onChange={onChange}
       />
       <Button
         className={cn(

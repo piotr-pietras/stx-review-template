@@ -25,3 +25,16 @@
 - You can use your CSS classes and styles or Tailwind
 - Example look of the Loader:
   ![Loader example](public/images/Loader.png)
+
+## `features/todo/AddPopoverContent.tsx`
+
+- The input in the AddPopoverContent doesn't work properly,
+- There's no possibility to save a new To Do list element,
+- Investigate the problem and find a solution
+
+#### (For the recruiter)
+
+- In the component onChange handler is missing, so the value does not change,
+  therefore onClick won't work because value.length = 0,
+- Value is not also assgined to the <input/> element,
+- To fix the problem Ref is also needed to be attached to the <input/>
