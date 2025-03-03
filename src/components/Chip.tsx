@@ -6,7 +6,7 @@ type Props = {
 };
 export const Chip = ({ children, onClose }: Props) => {
   return (
-    <span className="flex items-center bg-white text-stone-700 text-xs px-2 py-1 rounded-full">
+    <span className="flex items-center font-bold bg-white text-stone-700 text-xs px-3 py-2 rounded-full">
       {children}
       <button onClick={onClose} className="size-5 ml-1 cursor-pointer">
         <XMarkIcon className="size-full" />

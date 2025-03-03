@@ -1,4 +1,7 @@
-import { EllipsisVerticalIcon } from '@heroicons/react/16/solid';
+import {
+  CalendarDaysIcon,
+  EllipsisVerticalIcon,
+} from '@heroicons/react/16/solid';
 import { Todo } from '../../types/Todo';
 import { Checkbox } from '../../components/Checkbox';
 import { DropdownMenu } from '../../components/DropdownMenu';
@@ -28,8 +31,6 @@ export const Element = ({
         </div>
         <span className="text-stone-700 justify-end text-sm bg-stone-100 rounded-md h-8 flex items-center px-2 gap-x-1">
           <CalendarDaysIcon className="size-4" />
-          {formattedDate}
-        </span>
           {formattedDate}
         </span>
       </div>
