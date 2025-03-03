@@ -26,7 +26,10 @@ export const Element = ({
           <Checkbox id={id} checked={done} onCheckChange={onCheckboxClick} />
           <h3 className="text-stone-700 font-medium">{name}</h3>
         </div>
-        <span className="text-stone-400 justify-end text-xs">
+        <span className="text-stone-700 justify-end text-sm bg-stone-100 rounded-md h-8 flex items-center px-2 gap-x-1">
+          <CalendarDaysIcon className="size-4" />
+          {formattedDate}
+        </span>
           {formattedDate}
         </span>
       </div>
