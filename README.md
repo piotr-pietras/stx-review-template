@@ -24,5 +24,4 @@
 - Loader should appear on the first to do list load, and when a user deletes any list element
 - You can use your CSS classes and styles or Tailwind
 - Example look of the Loader:
-
   ![Loader example](public/images/Loader.png)
