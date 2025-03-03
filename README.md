@@ -35,6 +35,32 @@
 #### (For the recruiter)
 
 - In the component onChange handler is missing, so the value does not change,
-  therefore onClick won't work because value.length = 0,
+  therefore onClick won't work because the value.length is equal 0,
 - Value is not also assgined to the <input/> element,
 - To fix the problem Ref is also needed to be attached to the <input/>
+
+## `components/Button.tsx`
+
+- The Button component needs refactor, fix all that comes to your mind in terms of
+  good practices and readability of the code
+
+#### (For the recruiter)
+
+- The name of the props can be much better, without the typos, just 'Props' might suffice,
+- MyButtonComponent doesn't sound the best, Button would be enough,
+- Using interface instead of type for the Props type, it's not required but recommended by
+  TypeScript creators to use type as much as you can,
+- Not-used onChange handler, should be removed,
+- Not-used canHandleTheClick variable, should be removed,
+- In onButtonClick handler if can be used in a more readable and accessible way:
+
+  ```
+    if (isDisabled || !onClick) {
+      return;
+    }
+
+    onClick();
+  ```
+
+- Instead of using variable to contain the result of the component just return it right in the component return statement
+- Redundant comment, should be removed

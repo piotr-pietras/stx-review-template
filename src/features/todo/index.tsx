@@ -1,7 +1,7 @@
 import { format } from 'date-fns';
 import { useGetTodoList } from '../../api/useGetTodoList';
 import { Element } from './Element';
-import { Button } from '../../components/Button';
+import { MyButtonComponent } from '../../components/Button';
 import { Popover } from '../../components/Popover';
 import { PlusIcon } from '@heroicons/react/16/solid';
 import { useState } from 'react';
@@ -52,13 +52,13 @@ export const TodoList = () => {
           }
           className="w-200"
         >
-          <Button
+          <MyButtonComponent
             onClick={onAddButtonClick}
             className="bg-stone-900 h-15 text-white rounded-full flex items-center justify-start px-6 w-full gap-x-2"
           >
             <PlusIcon className="size-5" />
             Create a new task
-          </Button>
+          </MyButtonComponent>
         </Popover>
       </div>
     </>

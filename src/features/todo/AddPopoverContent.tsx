@@ -1,7 +1,7 @@
 import { SyntheticEvent } from 'react';
 import { useAddTodo } from '../../api/useAddTodo';
 import { v4 as uuid } from 'uuid';
-import { Button } from '../../components/Button';
+import { MyButtonComponent } from '../../components/Button';
 import cn from 'clsx';
 
 type Props = {
@@ -46,7 +46,7 @@ export const AddPopoverContent = ({
         className="w-full h-12 px-4 rounded-md border-1 border-gray-300 outline-none text-stone-700 font-medium"
         placeholder="Create new task"
       />
-      <Button
+      <MyButtonComponent
         className={cn(
           'w-full h-14 rounded-full text-white',
           isPending ? 'bg-gray-300' : 'bg-indigo-600'
@@ -55,7 +55,7 @@ export const AddPopoverContent = ({
         type="submit"
       >
         {text}
-      </Button>
+      </MyButtonComponent>
     </form>
   );
 };
