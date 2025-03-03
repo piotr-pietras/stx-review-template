@@ -11,8 +11,8 @@ import { useRemoveTodo } from '../../api/useRemoveTodo';
 const DATE_FORMAT = 'EEE d MMMM y';
 
 export const TodoList = () => {
-  const { data, isLoading } = useGetTodoList();
-  const { mutate, isPending } = useRemoveTodo();
+  const { data } = useGetTodoList();
+  const { mutate } = useRemoveTodo();
 
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const [inputValue, setInputValue] = useState('');
@@ -26,12 +26,6 @@ export const TodoList = () => {
 
   return (
     <>
-      {(isLoading || isPending) && (
-        <div className="fixed inset-0 flex justify-center items-center z-10">
-          <p className="text-2xl text-white font-bold z-20">Loading ...</p>
-          <div className="bg-black size-full opacity-40 absolute" />
-        </div>
-      )}
       <div className="max-w-200 w-full py-6 relative mx-auto">
         <h1 className="text-2xl text-gray-800 font-bold mb-1">
           Good Morning! 👋🏼
