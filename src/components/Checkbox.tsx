@@ -1,17 +1,18 @@
 import { CheckIcon } from '@heroicons/react/16/solid';
 import { Checkbox as CheckboxPrimitive } from 'radix-ui';
-import { useState } from 'react';
 import { v4 as uuid } from 'uuid';
 import cn from 'clsx';
 
-export const Checkbox = () => {
-  const [checked, setChecked] = useState(false);
+interface Props {
+  checked: boolean;
+  onCheckChange: () => void;
+}
+export const Checkbox = ({ checked, onCheckChange }: Props) => {
   const id = uuid();
-
-  const onCheckChange = (value: boolean) => setChecked(value);
 
   return (
     <CheckboxPrimitive.Root
+      checked={checked}
       onCheckedChange={onCheckChange}
       className="h-full w-11 flex justify-center items-center outline-none cursor-pointer"
     >
