@@ -10,12 +10,12 @@ type Props = {
   onCheckboxClick: () => void;
 };
 
-export const Element = ({ 
+export const Element = ({
   item,
   onDeleteButtonClick,
   onCheckboxClick,
 }: Props) => {
-  const { name, createdAt, done } = item;
+  const { name, createdAt, done, id } = item;
 
   const formattedDate = dateFormatter(createdAt);
 
@@ -23,7 +23,7 @@ export const Element = ({
     <div className="w-full h-12 bg-white rounded-lg flex justify-between items-center pr-3 relative overflow-hidden">
       <div className="flex justify-between items-center h-full w-full outline-none px-1">
         <div className="flex items-center gap-2">
-          <Checkbox checked={done} onCheckChange={onCheckboxClick} />
+          <Checkbox id={id} checked={done} onCheckChange={onCheckboxClick} />
           <h3 className="text-stone-700 font-medium">{name}</h3>
         </div>
         <span className="text-stone-400 justify-end text-xs">

@@ -38,14 +38,14 @@ export const ActionMenu = ({
 }: Props) => {
   return (
     <DropdownMenuPrimitive.Root>
-      <DropdownMenuPrimitive.Trigger className="outline-none">
+      <DropdownMenuPrimitive.Trigger className="outline-none text-black">
         {children}
       </DropdownMenuPrimitive.Trigger>
       <DropdownMenuPrimitive.Portal>
         <DropdownMenuPrimitive.Content
           side="bottom"
           align="end"
-          className="w-60 bg-white rounded-md outline-none mt-1 shadow-md border border-gray-100"
+          className="w-60 bg-white text-black rounded-md outline-none mt-1 shadow-md border border-gray-100"
         >
           <Item onSelect={onFilterDateAsc}>Sort by Date ascending</Item>
           <Item onSelect={onFilterDateDesc}>Sort by Date descending</Item>

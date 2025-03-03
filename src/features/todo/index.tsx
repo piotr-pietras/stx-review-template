@@ -2,13 +2,14 @@ import { useGetTodoList } from '../../api/useGetTodoList';
 import { Element } from './Element';
 import { Button } from '../../components/Button';
 import { Popover } from '../../components/Popover';
-import { PlusIcon, XMarkIcon } from '@heroicons/react/16/solid';
+import { PlusIcon } from '@heroicons/react/16/solid';
 import { useState } from 'react';
 import { AddPopoverContent } from './AddPopoverContent';
 import { useRemoveTodo } from '../../api/useRemoveTodo';
 import { useChangeDone } from '../../api/useChangeDone';
 import { dateFormatter } from '../../utils/dateFormatter';
 import { ActionMenu } from '../../components/ActionsMenu';
+import { Chip } from '../../components/Chip';
 
 export const TodoList = () => {
   const { data, isLoading } = useGetTodoList();
@@ -132,20 +133,5 @@ export const TodoList = () => {
         </Popover>
       </div>
     </>
-  );
-};
-
-const Chip = ({
-  children,
-  onClose,
-}: {
-  children: string;
-  onClose: () => void;
-}) => {
-  return (
-    <span className="flex items-center bg-white text-stone-700 text-xs px-2 py-1 rounded-full">
-      {children}
-      <XMarkIcon onClick={() => onClose()} className="size-3 ml-1" />
-    </span>
   );
 };

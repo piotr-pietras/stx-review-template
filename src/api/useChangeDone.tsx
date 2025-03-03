@@ -7,9 +7,7 @@ const changeDoneTodo = async (id: string) => {
   if (!todo) {
     throw new Error('Todo not found');
   }
-  todo.done = !todo.done; // toggle done status of the todo
-  updateDb(todo);
-  return getDb();
+  updateDb({ ...todo, done: !todo.done });
 };
 
 export const useChangeDone = () => {
