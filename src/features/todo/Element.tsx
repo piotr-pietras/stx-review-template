@@ -25,9 +25,11 @@ export const Element = ({
   return (
     <div className="w-full h-12 bg-white rounded-lg flex justify-between items-center pr-3 relative overflow-hidden">
       <div className="flex justify-between items-center h-full w-full outline-none px-1 mr-1">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 h-full">
           <Checkbox id={id} checked={done} onCheckChange={onCheckboxClick} />
-          <h3 className="text-stone-700 font-medium">{name}</h3>
+          <h3 className="text-stone-700 font-medium max-w-140 truncate">
+            {name}
+          </h3>
         </div>
         <span className="text-stone-700 justify-end text-sm bg-stone-100 rounded-md h-8 flex items-center px-2 gap-x-1">
           <CalendarDaysIcon className="size-4" />
