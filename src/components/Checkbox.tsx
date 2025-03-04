@@ -7,6 +7,7 @@ type Props = {
   checked: boolean;
   onCheckChange: () => void;
 };
+
 export const Checkbox = ({ id, checked, onCheckChange }: Props) => {
   return (
     <CheckboxPrimitive.Root
