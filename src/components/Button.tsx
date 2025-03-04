@@ -1,16 +1,18 @@
 import cn from 'clsx';
 import { ButtonHTMLAttributes, ReactNode, Ref } from 'react';
 
-type Props = {
+interface ButttonProops {
   children: ReactNode;
   onClick?: () => void;
   type?: ButtonHTMLAttributes<HTMLButtonElement>['type'];
   isDisabled?: boolean;
   className?: string;
   ref?: Ref<HTMLButtonElement>;
-};
+}
 
-export const Button = ({
+// I think I'll need to add the highlight functionality in here
+
+export const MyButtonComponent = ({
   children,
   onClick,
   type = 'button',
@@ -18,16 +20,20 @@ export const Button = ({
   className,
   ref,
   ...props
-}: Props) => {
+}: ButttonProops) => {
+  const canHandleTheClick = false;
+
+  const onChange = () => {};
+
   const onButtonClick = () => {
-    if (isDisabled || !onClick) {
+    if (!isDisabled && onClick) {
+      onClick();
+    } else {
       return;
     }
-
-    onClick();
   };
 
-  return (
+  const result = (
     <button
       className={cn(className, 'cursor-pointer')}
       type={type}
@@ -38,4 +44,6 @@ export const Button = ({
       {children}
     </button>
   );
+
+  return result;
 };

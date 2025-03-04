@@ -1,7 +1,7 @@
 import { format } from 'date-fns';
 import { useGetTodoList } from '../../api/useGetTodoList';
 import { Element } from './Element';
-import { Button } from '../../components/Button';
+import { MyButtonComponent } from '../../components/Button';
 import { Popover } from '../../components/Popover';
 import { PlusIcon } from '@heroicons/react/16/solid';
 import { useState } from 'react';
@@ -11,8 +11,8 @@ import { useRemoveTodo } from '../../api/useRemoveTodo';
 const DATE_FORMAT = 'EEE d MMMM y';
 
 export const TodoList = () => {
-  const { data, isLoading } = useGetTodoList();
-  const { mutate, isPending } = useRemoveTodo();
+  const { data } = useGetTodoList();
+  const { mutate } = useRemoveTodo();
 
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const [inputValue, setInputValue] = useState('');
@@ -26,12 +26,6 @@ export const TodoList = () => {
 
   return (
     <>
-      {(isLoading || isPending) && (
-        <div className="fixed inset-0 flex justify-center items-center z-10">
-          <p className="text-2xl text-white font-bold z-20">Loading ...</p>
-          <div className="bg-black size-full opacity-40 absolute" />
-        </div>
-      )}
       <div className="max-w-200 w-full py-6 relative mx-auto">
         <h1 className="text-2xl text-gray-800 font-bold mb-1">
           Good Morning! 👋🏼
@@ -58,13 +52,13 @@ export const TodoList = () => {
           }
           className="w-200"
         >
-          <Button
+          <MyButtonComponent
             onClick={onAddButtonClick}
             className="bg-stone-900 h-15 text-white rounded-full flex items-center justify-start px-6 w-full gap-x-2"
           >
             <PlusIcon className="size-5" />
             Create a new task
-          </Button>
+          </MyButtonComponent>
         </Popover>
       </div>
     </>
