@@ -2,11 +2,11 @@ import { CheckIcon } from '@heroicons/react/16/solid';
 import { Checkbox as CheckboxPrimitive } from 'radix-ui';
 import cn from 'clsx';
 
-type Props {
+type Props = {
   id: string;
   checked: boolean;
   onCheckChange: () => void;
-}
+};
 export const Checkbox = ({ id, checked, onCheckChange }: Props) => {
   return (
     <CheckboxPrimitive.Root
