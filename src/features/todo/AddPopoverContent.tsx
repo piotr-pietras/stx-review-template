@@ -3,6 +3,7 @@ import { useAddTodo } from '../../api/useAddTodo';
 import { v4 as uuid } from 'uuid';
 import { Button } from '../../components/Button';
 import cn from 'clsx';
+import { Todo } from '../../types/Todo';
 
 type Props = {
   onAddingSuccess: () => void;
@@ -26,16 +27,19 @@ export const AddPopoverContent = ({
     if (!value.length) {
       return;
     }
+    const newTodo: Todo = {
+      id: uuid(),
+      name: value,
+      done: false,
+      createdAt: new Date(),
+    };
 
-    mutate(
-      { id: uuid(), name: value, createdAt: Date.now() },
-      {
-        onSuccess: () => {
-          onValueChange('');
-          onAddingSuccess();
-        },
-      }
-    );
+    mutate(newTodo, {
+      onSuccess: () => {
+        onValueChange('');
+        onAddingSuccess();
+      },
+    });
   };
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) =>
