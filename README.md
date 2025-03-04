@@ -52,7 +52,7 @@
   TypeScript creators to use type as much as you can,
 - Not-used onChange handler, should be removed,
 - Not-used canHandleTheClick variable, should be removed,
-- In onButtonClick handler if can be used in a more readable and accessible way:
+- In onButtonClick handler 'if' can be formatted in a more readable and accessible way:
 
   ```
     if (isDisabled || !onClick) {
@@ -62,5 +62,7 @@
     onClick();
   ```
 
+- But the best way to achieve disabled button state would not be in additional onButtonClick handler, but
+  by using 'disabled' prop in the <button/> component
 - Instead of using variable to contain the result of the component just return it right in the component return statement
 - Redundant comment, should be removed
