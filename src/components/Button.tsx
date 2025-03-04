@@ -19,20 +19,13 @@ export const Button = ({
   ref,
   ...props
 }: Props) => {
-  const onButtonClick = () => {
-    if (isDisabled || !onClick) {
-      return;
-    }
-
-    onClick();
-  };
-
   return (
     <button
       className={cn(className, 'cursor-pointer')}
       type={type}
-      onClick={onButtonClick}
+      onClick={onClick}
       ref={ref}
+      disabled={isDisabled}
       {...props}
     >
       {children}

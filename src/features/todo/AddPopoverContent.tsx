@@ -52,6 +52,7 @@ export const AddPopoverContent = ({
         ref={inputRef}
         value={value}
         onChange={onChange}
+        maxLength={80}
       />
       <Button
         className={cn(
