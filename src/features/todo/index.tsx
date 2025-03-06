@@ -31,21 +31,9 @@ export const TodoList = () => {
 
   const onCheckboxClick = (id: string) => mutateDone(id);
 
-  const filteredAndSortedItems = (data || [])
-    .filter((item) => {
-      if (filterType === 'done' && !item.done) return false;
-      if (filterType === 'undone' && item.done) return false;
-      return true;
-    })
-    .sort((a, b) => {
-      if (sortType === 'asc')
-        return a.createdAt.getTime() - b.createdAt.getTime();
-      if (sortType === 'desc')
-        return b.createdAt.getTime() - a.createdAt.getTime();
-      return 0;
-    });
+  const filteredAndSortedItems = data || [];
 
-  const doneCounter = filteredAndSortedItems.filter((item) => item.done).length;
+  const doneCounter = filteredAndSortedItems.length;
 
   const doneCounterText =
     doneCounter === 0
