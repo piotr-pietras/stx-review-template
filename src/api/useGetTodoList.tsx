@@ -1,13 +1,11 @@
-import { useQuery } from "@tanstack/react-query";
-import { sleep } from "../utils/sleep";
-import { getDb } from "./mockDb";
+import { useQuery } from '@tanstack/react-query';
+import { getDb } from './mockDb';
 
 export const todoListQueryKeys = {
-  all: ["todoList"],
+  all: ['todoList'],
 };
 
 const getTodoList = async () => {
-  await sleep(2000);
   return getDb();
 };
 

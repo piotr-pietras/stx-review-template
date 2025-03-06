@@ -66,3 +66,17 @@
   by using `disabled` prop in the <button/> component
 - Instead of using variable to contain the result of the component just `return` it right in the component `return statement`
 - Redundant comment, should be removed
+
+## `features/todo/index.tsx:34`
+
+- Variable `filteredAndSortedItems` is not filtered or sorted
+- The list should be filtered and sorted based on the parameters selected from `Menu` dropdown
+
+## `utils/dateFormatter.ts:4`
+
+- Used date format pattern is not helpful, use a more user friendly formatting to display date as 01/01/2025 (`dd/MM/yyyy`)
+
+## `features/todo/index.tsx:36`
+
+- Done todos counter is not calculated correctly
+- Fix it by using a `reduce` method

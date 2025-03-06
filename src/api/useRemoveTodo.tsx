@@ -1,6 +1,6 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { todoListQueryKeys } from "./useGetTodoList";
-import { getDb, removeDb } from "./mockDb";
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { todoListQueryKeys } from './useGetTodoList';
+import { getDb, removeDb } from './mockDb';
 
 const removeTodo = async (id: string) => {
   removeDb(id);
