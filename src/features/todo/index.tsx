@@ -12,7 +12,7 @@ import { ActionMenu } from '../../components/ActionsMenu';
 import { Chip } from '../../components/Chip';
 
 export const TodoList = () => {
-  const { data, isLoading } = useGetTodoList();
+  const { data, isLoading, isFetching } = useGetTodoList();
   const { mutate, isPending } = useRemoveTodo();
   const { mutate: mutateDone } = useChangeDone();
 
@@ -56,7 +56,7 @@ export const TodoList = () => {
 
   return (
     <>
-      {(isLoading || isPending) && (
+      {(isLoading || isPending || isFetching) && (
         <div className="fixed inset-0 flex justify-center items-center z-10">
           <p className="text-2xl text-white font-bold z-20">Loading ...</p>
           <div className="bg-black size-full opacity-40 absolute" />
