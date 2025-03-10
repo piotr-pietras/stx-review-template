@@ -8,7 +8,7 @@ export const todoListQueryKeys = {
 };
 
 const getTodoList = async ({ initialFetch }: { initialFetch: boolean }) => {
-  const sleepTime = initialFetch ? 2000 : 300;
+  const sleepTime = initialFetch ? 2000 : 600;
   await sleep(sleepTime);
   return getDb();
 };
