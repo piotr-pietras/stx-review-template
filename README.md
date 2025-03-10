@@ -21,7 +21,7 @@
 - Add a global fixed loader for the app
 - Loader should be in the top layer of the app so there's no possibility to click
   on anything below when it's visible
-- Loader should appear on the first to do list load, and when a user deletes any list element
+- Loader should appear on the first to do list load and when a user deletes any list element or change done status of any item
 - You can use your CSS classes and styles or Tailwind
 - Example look of the Loader:
   ![Loader example](public/images/Loader.png)
@@ -36,7 +36,7 @@
 
 - In the component `onChange` handler is missing, so the value does not change,
   therefore `onClick` won't work because the `value.length` is `equal 0`,
-- Value is not also assgined to the <input/> element,
+- Value is not also assigned to the <input/> element,
 - To fix the problem `ref` is also needed to be attached to the <input/>
 
 ## `components/Button.tsx`
@@ -66,3 +66,17 @@
   by using `disabled` prop in the <button/> component
 - Instead of using variable to contain the result of the component just `return` it right in the component `return statement`
 - Redundant comment, should be removed
+
+## `features/todo/index.tsx:34`
+
+- Variable `filteredAndSortedItems` is not filtered or sorted
+- The list should be filtered and sorted based on the parameters selected from `Menu` dropdown
+
+## `utils/dateFormatter.ts:4`
+
+- Used date format pattern is not helpful, use a more user friendly formatting to display date as 01/01/2025 (`dd/MM/yyyy`)
+
+## `features/todo/index.tsx:36`
+
+- Done todos counter is not calculated correctly
+- Fix it by using a `reduce` method
