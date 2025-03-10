@@ -21,7 +21,7 @@
 - Add a global fixed loader for the app
 - Loader should be in the top layer of the app so there's no possibility to click
   on anything below when it's visible
-- Loader should appear on the first to do list load and when a user deletes any list element o change done status of any item
+- Loader should appear on the first to do list load and when a user deletes any list element or change done status of any item
 - You can use your CSS classes and styles or Tailwind
 - Example look of the Loader:
   ![Loader example](public/images/Loader.png)
