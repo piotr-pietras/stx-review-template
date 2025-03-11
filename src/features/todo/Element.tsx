@@ -2,13 +2,18 @@ import {
   CalendarDaysIcon,
   EllipsisVerticalIcon,
 } from '@heroicons/react/16/solid';
-import { Todo } from '../../types/Todo';
 import { Checkbox } from '../../components/Checkbox';
 import { DropdownMenu } from '../../components/DropdownMenu';
 import { dateFormatter } from '../../utils/dateFormatter';
 
 type Props = {
-  item: Todo;
+  item: {
+    id: string;
+    label: string;
+    done: boolean;
+    createdAt: Date;
+    name: string;
+  };
   onDeleteButtonClick: () => void;
   onCheckboxClick: () => void;
 };
