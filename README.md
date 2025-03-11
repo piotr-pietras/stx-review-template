@@ -1,16 +1,16 @@
 # Review tasks
 
-## `features/todo/Element.tsx:6`
+## `features/todo/Element.tsx:11`
 
-- Malformed object type
-- Object also may be imported from `./types`
+- Incorrect todo object type
+- Object also may be imported from `./types/Todo`
 
-## `features/todo/index.tsx:46`
+## `features/todo/index.tsx:84`
 
 - Lack of keys for mapped components
 - Expected ID as a key
 
-## `features/todo/index.tsx:54`
+## `features/todo/index.tsx:97`
 
 - Modal does not close after successful submission
 - Missing `onAddingSuccess` callback
